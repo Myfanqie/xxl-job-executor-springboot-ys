@@ -1,6 +1,8 @@
 package com.xxl.job.executor.service.jobhandler.ys;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,8 +13,10 @@ import java.util.Map;
 public class MihoyoBBS {
     private Map<String,String> headers;
     private String cookie;
+    private List<String> articleList;
 
     public MihoyoBBS() {
+        articleList = new ArrayList<>();
         headers = new HashMap<>();
         headers.put("DS", GlobalTool.getDS());
         headers.put("x-rpc-client_type", GlobalTool.CLIENT_TYPE);
@@ -25,5 +29,8 @@ public class MihoyoBBS {
         headers.put("Referer", "https://app.mihoyo.com");
         headers.put("Host", "bbs-api.mihoyo.com");
         headers.put("User-Agent", "okhttp/4.8.0");
+
+        cookie = GlobalTool.loadCookie();
+        articleList = GlobalTool.loadArticleList();
     }
 }
