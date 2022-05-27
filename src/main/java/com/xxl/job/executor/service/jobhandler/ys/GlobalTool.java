@@ -16,8 +16,10 @@ import static cn.hutool.crypto.SecureUtil.md5;
 public class GlobalTool {
 
     public static final String salt = "fd3ykrh7o1j54g581upo1tvpam0dsgtf";
-    public static final String client_type = "2";
-    public static final String mysVersion = "2.7.0";
+    public static final String CLIENT_TYPE = "2";
+    public static final String MYS_Version = "2.7.0";
+    public static final String SYS_Version = "6.0.1";
+    public static final String CHANNEL = "miyousheluodi";
 
     public static List<GamePojo> gameList;
     static {
@@ -46,7 +48,7 @@ public class GlobalTool {
     }
 
     //生成DS
-    public String getDS(){
+    public static String getDS(){
         String n = salt;
         String i = System.currentTimeMillis()+"";
         String r = getRandomString(6);
@@ -55,7 +57,7 @@ public class GlobalTool {
     }
 
     public static void main(String[] args) {
-        GlobalTool globalTool = new GlobalTool();
-        System.out.println(globalTool.getDS());
+//        GlobalTool globalTool = new GlobalTool();
+//        System.out.println(globalTool.getDS());
     }
 }
