@@ -1,5 +1,6 @@
 package com.xxl.job.executor.service.jobhandler.ys;
 
+import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
@@ -82,6 +83,7 @@ public class GlobalTool {
                     System.out.println(str);
                 }
             }
+            ThreadUtil.sleep(5000);
         }
         return list;
     }
