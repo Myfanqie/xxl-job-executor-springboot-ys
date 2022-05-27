@@ -14,6 +14,13 @@ public class GamePojo implements Serializable {
     private String url;
 
     public GamePojo(String id, String forumId, String name, String url) {
+        this.id = id;
+        this.forumId = forumId;
+        this.name = name;
+        this.url = url;
+    }
+
+    public GamePojo() {
     }
 
     public String getId() {
@@ -46,5 +53,15 @@ public class GamePojo implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "GamePojo{" +
+                "id='" + id + '\'' +
+                ", forumId='" + forumId + '\'' +
+                ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }
