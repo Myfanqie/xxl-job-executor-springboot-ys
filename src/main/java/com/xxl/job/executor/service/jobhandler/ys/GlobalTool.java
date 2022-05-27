@@ -1,7 +1,11 @@
 package com.xxl.job.executor.service.jobhandler.ys;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 
+import java.io.File;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,8 +60,22 @@ public class GlobalTool {
         return StrUtil.format("{},{},{}" , i, r, c);
     }
 
+    //获取cookie直接和jar包放一起就可以了
+    public static String loadCookie(){
+        JSONObject json = (JSONObject) JSONUtil.readJSON(new File("./cookie.json"), Charset.forName("UTF-8"));
+        return json.getStr("Cookie");
+    }
+
+    public static List<String> loadArticleList(){
+        //TODO
+        return new ArrayList<>();
+    }
+
     public static void main(String[] args) {
+
 //        GlobalTool globalTool = new GlobalTool();
 //        System.out.println(globalTool.getDS());
+//        HttpRequest.of("https://bbs.mihoyo.com/api/v1/user/login").cookie().headerMap()
+
     }
 }
