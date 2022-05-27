@@ -1,5 +1,7 @@
 package com.xxl.job.executor.service.jobhandler.ys;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.Map;
  * @DateTime 2022/5/27 16:47
  * @Description TODO
  */
+@Component
 public class MihoyoBBS {
     private Map<String,String> headers;
     private String cookie;
@@ -31,6 +34,6 @@ public class MihoyoBBS {
         headers.put("User-Agent", "okhttp/4.8.0");
 
         cookie = GlobalTool.loadCookie();
-        articleList = GlobalTool.loadArticleList();
+        articleList = GlobalTool.loadArticleList(headers);
     }
 }
